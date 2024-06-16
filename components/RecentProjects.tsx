@@ -10,17 +10,18 @@ const RecentProjects = () => {
         <div className="py-20" id="projects">
             <h1 className="heading">
                 A small selection of{" "}
-                <span className="text-purple">recent projects</span>
+                <span className="text-green">recent projects</span>
             </h1>
             <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
                 {projects.map((item) => (
                     <div
+                        onClick={() => window.open(item.link, '_blank')}
                         className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
                         key={item.id}
                     >
                         <PinContainer
-                            title="/ui.aceternity.com"
-                            href="https://twitter.com/mannupaaji"
+                            title={item.link}
+                            href={item.link}
                         >
                             <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                                 <div
@@ -66,7 +67,7 @@ const RecentProjects = () => {
                                 </div>
 
                                 <div className="flex justify-center items-center">
-                                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                                    <p className="flex lg:text-xl md:text-xs text-sm text-green">
                                         Check Live Site
                                     </p>
                                     <FaLocationArrow className="ms-3" color="#CBACF9" />
